@@ -2,10 +2,10 @@ import React from 'react';
 import './employee.css'
 function Employee(props) {
     const data = [
-        { id: 1, name: 'John Doe', sex: "M", email: 'john@example.com' },
-        { id: 2, name: 'Jane Smith', sex: "M", email: 'jane@example.com' },
-        { id: 3, name: 'Bob Johnson', sex: "M", email: 'bob@example.com' },
-        { id: 4, name: 'Alice Williams', sex: "M", email: 'alice@example.com' },
+        { id: 1, name: 'Loy', sex: "Female", email: 'loy@example.com', salary: '15000', department: 'Sales'},
+        { id: 2, name: 'Aswin', sex: "Male", email: 'aswin@example.com', salary: '25000', department: 'Accounts' },
+        { id: 3, name: 'Preethi', sex: "Female", email: 'preethi@example.com', salary: '27000', department: 'Testing' },
+        { id: 4, name: 'Chandharan', sex: "Male", email: 'chandharan@example.com', salary: '30000', department: 'HR' },
       ];
       const handleEdit = (rowData) => {
         // You can handle the navigation logic to the edit page here
@@ -36,6 +36,8 @@ function Employee(props) {
             <th>Name</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Salary</th>
+            <th>Department</th>
             <th>Actipons</th>
           </tr>
         </thead>
@@ -46,6 +48,8 @@ function Employee(props) {
               <td>{item.name}</td>
               <td>{item.sex}</td>
               <td>{item.email}</td>
+              <td>{item.salary}</td>
+              <td>{item.department}</td>
               <td><button onClick={() => handleEdit(item)}>Edit</button></td>
             </tr>
           ))}

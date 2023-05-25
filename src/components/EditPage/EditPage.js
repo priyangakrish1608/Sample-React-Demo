@@ -9,10 +9,10 @@ const EditPage = () => {
 
   const getRowDataFromQueryParams = useCallback((search) => {
     const data = [
-      { id: 1, name: 'John Doe', sex: "M", email: 'john@example.com' },
-      { id: 2, name: 'Jane Smith', sex: "M", email: 'jane@example.com' },
-      { id: 3, name: 'Bob Johnson', sex: "M", email: 'bob@example.com' },
-      { id: 4, name: 'Alice Williams', sex: "M", email: 'alice@example.com' },
+      { id: 1, name: 'John Doe', sex: "M", email: 'john@example.com', salary: '15000', department: 'Sales' },
+      { id: 2, name: 'Jane Smith', sex: "M", email: 'jane@example.com', salary: '25000', department: 'Accounts'  },
+      { id: 3, name: 'Bob Johnson', sex: "M", email: 'bob@example.com', salary: '27000', department: 'Testing'},
+      { id: 4, name: 'Alice Williams', sex: "M", email: 'alice@example.com', salary: '30000', department: 'HR'  },
     ];
     const queryParams = new URLSearchParams(search);
     const id = queryParams.get('id');
@@ -55,6 +55,14 @@ const EditPage = () => {
         <div>
           <label>Email:</label>
           <input type="text" value={rowData.email} />
+        </div>
+        <div>
+          <label>Salary:</label>
+          <input type="text" value={rowData.salary} />
+        </div>
+        <div>
+          <label>Department:</label>
+          <input type="text" value={rowData.department} />
         </div>
         <button type="submit">Save</button>
       </form>
