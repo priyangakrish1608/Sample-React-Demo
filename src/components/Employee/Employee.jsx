@@ -5,7 +5,7 @@ function Employee(props) {
         { id: 1, name: 'Loy', sex: "Female", email: 'loy@example.com', salary: '15000', department: 'Sales'},
         { id: 2, name: 'Aswin', sex: "Male", email: 'aswin@example.com', salary: '25000', department: 'Accounts' },
         { id: 3, name: 'Preethi', sex: "Female", email: 'preethi@example.com', salary: '27000', department: 'Testing' },
-        { id: 4, name: 'Chandharan', sex: "Male", email: 'chandharan@example.com', salary: '30000', department: 'HR' },
+      
       ];
       const handleEdit = (rowData) => {
         // You can handle the navigation logic to the edit page here
