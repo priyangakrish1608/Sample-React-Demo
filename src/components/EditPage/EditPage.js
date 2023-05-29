@@ -34,7 +34,8 @@ if (!rowData) {
 return <div>Loading...</div>;
  }
 return (
-   <div>
+   <div className="container-1">Each field should not be empty*
+
      <div className='container' style={{ width: '700px' }}>
      <h2>{Id === '' ? 'Add' : 'Edit'} Page</h2>
      <form>

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import './login.css';
 import {  useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
   const {
     register,
@@ -17,7 +18,11 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-1">WELCOME TO MANULIFE!!
+    
+       
+      
+    <div className="container" style={{width:'500px'}}>
       <h2>Login</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
@@ -43,6 +48,8 @@ const Login = () => {
         <button type="submit">Log In</button>
       </form>
     </div>
+  </div>
+  
   );
 };
 
