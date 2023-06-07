@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./Login/Login";
-import Employee from "./Employee/Employee";
+import Employee from "./Employee/employee";
 import EditPage from "./EditPage/EditPage";
 
 const routes = [
@@ -8,7 +8,7 @@ const routes = [
     element: <Login />,
 }, {
     path: 'employee',
-    element: <Employee/>
+    element: <employee/>
 },
 {
     path: 'edit',

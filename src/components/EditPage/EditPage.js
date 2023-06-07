@@ -9,13 +9,13 @@ const [rowData, setRowData] = useState(null);
 const [Id, SetID] = useState('');
 const getRowDataFromQueryParams = useCallback((search, id) => {
 const data = [
- { id: 1, name: 'Loy', sex: "Female", email: 'loy@example.com', salary: '25000', department: 'Sales'},
- { id: 2, name: 'Aswin', sex: "Male", email: 'aswin@example.com', salary: '25000', department: 'Accounts' },
- { id: 3, name: 'Preethi', sex: "Female", email: 'preethi@example.com', salary: '27000', department: 'Testing' },
- { id: 4, name: 'Chandharan', sex: "Male", email: 'chandharan@example.com', salary: '30000', department: 'HR' },
- {id: 5, name: 'Sreesha', sex: "Female", email: 'sreesha@example.com', salary: '10000', department: 'Supporting'},
- {id: 6, name: 'Amutha', sex: "Female", email: 'aumtha@example.com', salary: '15000', department: 'Supporting'},
- {id: 7, name: 'shakthi', sex: "Male", email: 'shakthi@example.com', salary: '32000', department: 'Project Manager'}
+ { id: 1, name: 'Loy',age: '25', sex: "Female", email: 'loy@example.com', salary: '25000', department: 'Sales'},
+ { id: 2, name: 'Aswin',age: '22', sex: "Male", email: 'aswin@example.com', salary: '25000', department: 'Accounts' },
+ { id: 3, name: 'Preethi',age: '27', sex: "Female", email: 'preethi@example.com', salary: '27000', department: 'Testing' },
+ { id: 4, name: 'Chandharan',age: '29', sex: "Male", email: 'chandharan@example.com', salary: '30000', department: 'HR' },
+ {id: 5, name: 'Sreesha',age: '23', sex: "Female", email: 'sreesha@example.com', salary: '10000', department: 'Supporting'},
+ {id: 6, name: 'Amutha',age: '28', sex: "Female", email: 'aumtha@example.com', salary: '15000', department: 'Supporting'},
+ {id: 7, name: 'shakthi',age: '23', sex: "Male", email: 'shakthi@example.com', salary: '32000', department: 'Project Manager'}
  ];
  // Retrieve the corresponding rowData based on the id from your data source (e.g., API, Redux store)
  const rowData = data.find((e) => e.id === id) ?? {};
@@ -34,7 +34,7 @@ if (!rowData) {
 return <div>Loading...</div>;
  }
 return (
-   <div className="container-1">Each field should not be empty*
+   <div className="container-2">Each field should not be empty*
 
      <div className='container' style={{ width: '700px' }}>
      <h2>{Id === '' ? 'Add' : 'Edit'} Page</h2>
@@ -46,6 +46,10 @@ return (
        <div>
           <label>Name:</label>
           <input type="text" value={rowData.name} />
+       </div>
+       <div>
+          <label>Age:</label>
+          <input type="text" value={rowData.age} />
        </div>
        <div>
           <label>Sex:</label>
