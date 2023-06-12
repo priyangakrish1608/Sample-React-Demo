@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, useRoutes, Link } from 'react-router-dom';
 import routes from './components/routes';
 
+
+
 const Header = () => {
   return (
     <header className="header">
@@ -15,9 +17,7 @@ const Header = () => {
           <li className="nav-item">
             <Link to="/employee" className="nav-link">Employee</Link>
           </li>
-          <li className="nav-item">
-            <Link to="/edit" className="nav-link">Edit</Link>
-          </li>
+          
           <li className="nav-item">
             <Link to="/add" className="nav-link">Add</Link>
           </li>

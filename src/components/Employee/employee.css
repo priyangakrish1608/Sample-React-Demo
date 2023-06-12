@@ -16,7 +16,7 @@
   th,
   td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #db0b0b;
   }
   
@@ -25,7 +25,7 @@
   }
   
   tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f5f5;
   }
   
   tbody tr:hover {

@@ -2,8 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './login.css';
 import {  useNavigate } from 'react-router-dom';
-
-
+import axios from 'axios';
 const Login = () => {
   const {
     register,
@@ -14,7 +13,17 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data); // Form data
+    axios
+      .post('http://localhost:8080/user/add', data) // Replace with your backend login endpoint
+      .then((response) => {
+        // Successful login
+        console.log('Login successful');
     navigate("/employee/", { replace: true });
+  })
+  .catch((error) => {
+    // Login error
+    console.error('Login failed:', error);
+  });
   };
 
   return (
