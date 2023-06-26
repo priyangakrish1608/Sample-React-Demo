@@ -1,13 +1,26 @@
+
+
 .header {
-  background-color: #070606;
-  padding: 10px;
+  background-color:black;
+  padding: 100px;
+  border-bottom: 2px solid white;
+  /*height: 90px;
+  bottom: 50px;
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto;
+  
 }
 .header-title {
+  display: flex; /* Add display:flex to make the title and logo align on the same line */
+  align-items: center;
   float: left;
-  margin-right: 20px;
+  margin-top: 1px;
+  margin-left: 40px;
   font-weight: bold;
   font-size: 40px;
-  color: #efebeb;
+  color:orange;
+  bottom: 15px;
+  width: 40%;
 }
 
 
@@ -23,24 +36,27 @@
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 10px;
+  
 }
 
 .nav-item {
   font-size: 20px;
   font-weight: bold;
   font-style: normal;
+  margin-right: 80px;
+
 }
 
 
 .nav-link {
   text-decoration: none;
-  color: #06fd2f;
+  color:white;
   
 }
 
 .nav-link:hover {
-  color: #efebeb;
+  color:orange;
 }
 
 

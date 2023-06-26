@@ -8,15 +8,22 @@ import routes from './components/routes';
 const Header = () => {
   return (
     <header className="header">
+
+
       
-      <div className="header-title">Manulife</div>
+      <div className="header-title">Nectra</div>
       <nav className="nav">
       
         <ul className="nav-list">
+        <li className="nav-item">
+            <Link to="/home" className="nav-link">Home</Link>
+          </li>
         
           <li className="nav-item">
             <Link to="/employee" className="nav-link">Employee</Link>
           </li>
+
+          
           
           <li className="nav-item">
             <Link to="/add" className="nav-link">Add</Link>

@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import './employee.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, Route, Routes } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './employee.css';
+import EmployeeDetails from './EmployeeDetails';
 
 function Employee(props) {
-  const [employee, setEmployee] = useState([]);
-  const navigate = useNavigate();
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     fetchEmployees();
   }, []);
+
+  const navigate = useNavigate();
 
   const handleEdit = (rowData) => {
     navigate('/edit', { state: { rowData } });
@@ -38,7 +41,7 @@ function Employee(props) {
     axios
       .get(apiUrl)
       .then(response => {
-        setEmployee(response.data);
+        setEmployees(response.data);
       })
       .catch(error => {
         console.error('Error fetching employees:', error);
@@ -50,8 +53,8 @@ function Employee(props) {
       <div style={{ textAlign: 'right', marginTop: '20px' }}>
         
       </div>
-      <div className="table-container">
-        <table style={{ marginTop: '20px' }}>
+      <div className="table-container" style={{ marginTop: '20px', border: '1px solid black' }}>
+        <table>
           <thead>
             <tr>
               <th>ID</th>
@@ -61,11 +64,11 @@ function Employee(props) {
               <th>Email</th>
               <th>Salary</th>
               <th>Department</th>
-              <th colSpan={2}>Actions</th>
+              <th colSpan={3}>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {employee.map((item) => (
+            {employees.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
@@ -75,19 +78,26 @@ function Employee(props) {
                 <td>{item.salary}</td>
                 <td>{item.department}</td>
                 <td>
-                  <button onClick={() => handleEdit(item)}>Edit</button>
+                  <button className="edit-button" onClick={() => handleEdit(item)}>Edit</button>
                 </td>
                 <td>
-                  <button onClick={() => handleDelete(item.id)}>Delete</button>
+                  <Link to={`/employees/${item.id}`} className="view-button">View</Link>
+                </td>
+                <td>
+                  <button className="delete-button" onClick={() => handleDelete(item.id)}>Delete</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <Routes>
+      <Route
+  path="/employees/:id"
+  element={<EmployeeDetails />}
+/>
+      </Routes>
     </>
-    
-    
   );
 }
 
